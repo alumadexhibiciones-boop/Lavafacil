@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Clock, Phone, Wrench, CheckCircle, Sun, Moon, MapPin, Truck, MessageCircle } from 'lucide-react';
 
-export default function LavaFacil() {
+export default function LavaFacilWeb() {
   const [horario, setHorario] = useState('diurno');
 
   const serviciosDiurnos = [
@@ -9,28 +9,28 @@ export default function LavaFacil() {
       tipo: "Doble Tina",
       precio: "12.000",
       duracion: "4 horas",
-      imagen: "🔄",
+      icono: "🔄",
       caracteristicas: ["Ideal para cargas medianas", "Ahorro de energía", "Fácil de usar"]
     },
     {
       tipo: "Digital Pequeña",
       precio: "14.000",
       duracion: "4 horas",
-      imagen: "📱",
+      icono: "📱",
       caracteristicas: ["Tecnología digital", "Programas automáticos", "Perfecta para apartamentos"]
     },
     {
       tipo: "Digital Mediana",
       precio: "16.000",
       duracion: "4 horas",
-      imagen: "⚙️",
+      icono: "⚙️",
       caracteristicas: ["Mayor capacidad", "Múltiples programas", "Eficiencia energética"]
     },
     {
       tipo: "Digital Grande",
       precio: "18.000",
       duracion: "4 horas",
-      imagen: "🏆",
+      icono: "🏆",
       caracteristicas: ["Máxima capacidad", "Tecnología avanzada", "Ideal para familias"]
     }
   ];
@@ -40,28 +40,28 @@ export default function LavaFacil() {
       tipo: "Doble Tina",
       precio: "16.500",
       duracion: "Toda la noche",
-      imagen: "🔄",
+      icono: "🔄",
       caracteristicas: ["Entrega: 5-6 PM", "Recogida: 7-8 AM", "Ideal para cargas medianas"]
     },
     {
       tipo: "Digital Pequeña",
       precio: "20.000",
       duracion: "Toda la noche",
-      imagen: "📱",
+      icono: "📱",
       caracteristicas: ["Entrega: 5-6 PM", "Recogida: 7-8 AM", "Perfecta para apartamentos"]
     },
     {
       tipo: "Digital Mediana",
       precio: "22.000",
       duracion: "Toda la noche",
-      imagen: "⚙️",
+      icono: "⚙️",
       caracteristicas: ["Entrega: 5-6 PM", "Recogida: 7-8 AM", "Mayor capacidad"]
     },
     {
       tipo: "Digital Grande",
       precio: "24.000",
       duracion: "Toda la noche",
-      imagen: "🏆",
+      icono: "🏆",
       caracteristicas: ["Entrega: 5-6 PM", "Recogida: 7-8 AM", "Máxima capacidad"]
     }
   ];
@@ -80,35 +80,35 @@ export default function LavaFacil() {
         <span className="hidden group-hover:inline-block font-bold pr-2">WhatsApp</span>
       </a>
 
-      <header className="bg-gradient-to-r from-gray-900 via-black to-blue-900 text-white py-16 px-4">
+      <header className="bg-gradient-to-r from-gray-900 via-black to-blue-900 text-white py-12 px-4">
         <div className="max-w-6xl mx-auto text-center">
-          <div className="mb-6">
-            <div className="w-32 h-32 mx-auto bg-white/10 rounded-full flex items-center justify-center mb-4 backdrop-blur-sm">
-              <div className="text-6xl">🧺</div>
+          <div className="mb-4">
+            <div className="w-24 h-24 mx-auto bg-white bg-opacity-10 rounded-full flex items-center justify-center mb-3 backdrop-blur-sm">
+              <div className="text-5xl">🧺</div>
             </div>
           </div>
-          <h1 className="text-5xl font-bold mb-4">LavaFácil</h1>
-          <p className="text-2xl mb-4">Alquiler de Lavadoras con Servicio Técnico</p>
-          <div className="flex flex-wrap justify-center gap-2 mb-6">
-            <div className="flex items-center gap-2 bg-white/20 px-4 py-2 rounded-full backdrop-blur-sm">
+          <h1 className="text-4xl md:text-5xl font-bold mb-3">LavaFácil</h1>
+          <p className="text-xl md:text-2xl mb-4">Alquiler de Lavadoras con Servicio Técnico</p>
+          <div className="flex flex-wrap justify-center gap-2 mb-4 text-sm md:text-base">
+            <div className="flex items-center gap-2 bg-white bg-opacity-20 px-3 py-2 rounded-full backdrop-blur-sm">
               <MapPin className="w-4 h-4" />
-              <span className="text-sm">Cra 17M #69A-54 Sur, Lucero Medio</span>
+              <span>Cra 17M #69A-54 Sur, Lucero Medio</span>
             </div>
-            <div className="flex items-center gap-2 bg-white/20 px-4 py-2 rounded-full backdrop-blur-sm">
+            <div className="flex items-center gap-2 bg-white bg-opacity-20 px-3 py-2 rounded-full backdrop-blur-sm">
               <Phone className="w-4 h-4" />
-              <span className="text-sm">320 404 6369</span>
+              <span>320 404 6369</span>
             </div>
           </div>
-          <div className="flex flex-wrap justify-center gap-4 text-lg">
-            <div className="flex items-center gap-2 bg-white/20 px-4 py-2 rounded-full">
+          <div className="flex flex-wrap justify-center gap-3 text-base">
+            <div className="flex items-center gap-2 bg-white bg-opacity-20 px-4 py-2 rounded-full">
               <Sun className="w-5 h-5" />
               <span>Servicio Diurno</span>
             </div>
-            <div className="flex items-center gap-2 bg-white/20 px-4 py-2 rounded-full">
+            <div className="flex items-center gap-2 bg-white bg-opacity-20 px-4 py-2 rounded-full">
               <Moon className="w-5 h-5" />
               <span>Servicio Nocturno</span>
             </div>
-            <div className="flex items-center gap-2 bg-white/20 px-4 py-2 rounded-full">
+            <div className="flex items-center gap-2 bg-white bg-opacity-20 px-4 py-2 rounded-full">
               <Truck className="w-5 h-5" />
               <span>Entrega e Instalación</span>
             </div>
@@ -116,37 +116,37 @@ export default function LavaFacil() {
         </div>
       </header>
 
-      <section className="max-w-6xl mx-auto py-16 px-4">
-        <h2 className="text-4xl font-bold text-center mb-8 text-gray-800">
+      <section className="max-w-6xl mx-auto py-12 px-4">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-6 text-gray-800">
           Nuestros Servicios
         </h2>
         
-        <div className="flex flex-col sm:flex-row justify-center gap-4 mb-12">
+        <div className="flex flex-col sm:flex-row justify-center gap-3 mb-8">
           <button
             onClick={() => setHorario('diurno')}
-            className={`flex items-center justify-center gap-2 px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 ${
+            className={`flex items-center justify-center gap-2 px-6 py-3 rounded-full font-bold text-base transition-all duration-300 ${
               horario === 'diurno'
                 ? 'bg-gradient-to-r from-blue-600 to-blue-800 text-white shadow-lg scale-105'
                 : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
             }`}
           >
-            <Sun className="w-6 h-6" />
+            <Sun className="w-5 h-5" />
             Servicio Diurno
           </button>
           <button
             onClick={() => setHorario('nocturno')}
-            className={`flex items-center justify-center gap-2 px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 ${
+            className={`flex items-center justify-center gap-2 px-6 py-3 rounded-full font-bold text-base transition-all duration-300 ${
               horario === 'nocturno'
                 ? 'bg-gradient-to-r from-gray-900 to-black text-white shadow-lg scale-105'
                 : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
             }`}
           >
-            <Moon className="w-6 h-6" />
+            <Moon className="w-5 h-5" />
             Servicio Nocturno
           </button>
         </div>
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {servicios.map((servicio, index) => (
             <div
               key={index}
@@ -158,20 +158,20 @@ export default function LavaFacil() {
                 horario === 'nocturno' 
                   ? 'bg-gradient-to-r from-gray-900 to-black' 
                   : 'bg-gradient-to-r from-blue-500 to-blue-600'
-              } p-6 text-white`}>
-                <div className="text-5xl mb-3">{servicio.imagen}</div>
-                <h3 className="text-2xl font-bold mb-2">{servicio.tipo}</h3>
-                <div className="text-4xl font-bold">${servicio.precio}</div>
-                <p className={`${horario === 'nocturno' ? 'text-gray-300' : 'text-blue-100'} mt-2`}>
+              } p-5 text-white text-center`}>
+                <div className="text-4xl mb-2">{servicio.icono}</div>
+                <h3 className="text-xl font-bold mb-1">{servicio.tipo}</h3>
+                <div className="text-3xl font-bold">${servicio.precio}</div>
+                <p className={`${horario === 'nocturno' ? 'text-gray-300' : 'text-blue-100'} mt-1 text-sm`}>
                   {servicio.duracion}
                 </p>
               </div>
               
-              <div className="p-6">
-                <ul className="space-y-3">
+              <div className="p-4">
+                <ul className="space-y-2">
                   {servicio.caracteristicas.map((car, i) => (
-                    <li key={i} className="flex items-start gap-2">
-                      <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                    <li key={i} className="flex items-start gap-2 text-sm">
+                      <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
                       <span className="text-gray-700">{car}</span>
                     </li>
                   ))}
@@ -182,39 +182,39 @@ export default function LavaFacil() {
         </div>
       </section>
 
-      <section className="bg-gradient-to-r from-gray-900 via-black to-gray-900 text-white py-16 px-4">
+      <section className="bg-gradient-to-r from-gray-900 via-black to-gray-900 text-white py-12 px-4">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-10">
             ¿Por Qué Elegir LavaFácil?
           </h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="text-center">
-              <div className="bg-white/20 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Clock className="w-10 h-10" />
+              <div className="bg-white bg-opacity-20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-3">
+                <Clock className="w-8 h-8" />
               </div>
-              <h3 className="text-2xl font-bold mb-3">Horario Flexible</h3>
-              <p className="text-gray-300">
+              <h3 className="text-xl font-bold mb-2">Horario Flexible</h3>
+              <p className="text-gray-300 text-sm">
                 Servicio diurno y nocturno disponible. Alquila por las horas que necesites.
               </p>
             </div>
             
             <div className="text-center">
-              <div className="bg-white/20 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Truck className="w-10 h-10" />
+              <div className="bg-white bg-opacity-20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-3">
+                <Truck className="w-8 h-8" />
               </div>
-              <h3 className="text-2xl font-bold mb-3">Entrega a Domicilio</h3>
-              <p className="text-gray-300">
+              <h3 className="text-xl font-bold mb-2">Entrega a Domicilio</h3>
+              <p className="text-gray-300 text-sm">
                 Llevamos e instalamos la lavadora en tu casa. Servicio completo sin complicaciones.
               </p>
             </div>
             
             <div className="text-center">
-              <div className="bg-white/20 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Wrench className="w-10 h-10" />
+              <div className="bg-white bg-opacity-20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-3">
+                <Wrench className="w-8 h-8" />
               </div>
-              <h3 className="text-2xl font-bold mb-3">Servicio Técnico</h3>
-              <p className="text-gray-300">
+              <h3 className="text-xl font-bold mb-2">Servicio Técnico</h3>
+              <p className="text-gray-300 text-sm">
                 Reparación y mantenimiento profesional de lavadoras. Técnicos especializados.
               </p>
             </div>
@@ -222,58 +222,58 @@ export default function LavaFacil() {
         </div>
       </section>
 
-      <section className="max-w-4xl mx-auto py-16 px-4 text-center">
-        <h2 className="text-4xl font-bold mb-6 text-gray-800">
+      <section className="max-w-4xl mx-auto py-12 px-4 text-center">
+        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-800">
           ¿Listo para Alquilar tu Lavadora?
         </h2>
-        <p className="text-xl text-gray-600 mb-8">
+        <p className="text-lg md:text-xl text-gray-600 mb-6">
           Contáctanos ahora y disfruta de nuestro servicio profesional
         </p>
-        <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-4">
+        <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-3">
           <a
             href="https://wa.me/573204046369?text=Hola%2C%20me%20interesa%20el%20servicio%20de%20alquiler%20de%20lavadoras"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-green-500 text-white px-8 py-4 rounded-full text-xl font-bold hover:bg-green-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 flex items-center justify-center gap-3"
+            className="bg-green-500 text-white px-6 py-3 rounded-full text-lg font-bold hover:bg-green-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 flex items-center justify-center gap-2"
           >
-            <MessageCircle className="w-6 h-6" />
+            <MessageCircle className="w-5 h-5" />
             WhatsApp
           </a>
           <a
             href="tel:+573204046369"
-            className="bg-gradient-to-r from-gray-900 to-black text-white px-8 py-4 rounded-full text-xl font-bold hover:from-black hover:to-gray-800 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 flex items-center justify-center gap-3"
+            className="bg-gradient-to-r from-gray-900 to-black text-white px-6 py-3 rounded-full text-lg font-bold hover:from-black hover:to-gray-800 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 flex items-center justify-center gap-2"
           >
-            <Phone className="w-6 h-6" />
+            <Phone className="w-5 h-5" />
             Llamar Ahora
           </a>
         </div>
       </section>
 
-      <footer className="bg-gray-800 text-white py-8 px-4">
+      <footer className="bg-gray-800 text-white py-6 px-4">
         <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-4">
             <div className="text-center md:text-left">
-              <h3 className="text-2xl font-bold mb-2">LavaFácil</h3>
-              <p className="text-gray-400">Alquiler de Lavadoras con Servicio Técnico Profesional</p>
+              <h3 className="text-xl font-bold mb-1">LavaFácil</h3>
+              <p className="text-gray-400 text-sm">Alquiler de Lavadoras con Servicio Técnico Profesional</p>
             </div>
             <div className="text-center">
-              <h4 className="font-bold mb-2 flex items-center justify-center gap-2">
-                <MapPin className="w-5 h-5" />
+              <h4 className="font-bold mb-1 flex items-center justify-center gap-2 text-sm">
+                <MapPin className="w-4 h-4" />
                 Ubicación
               </h4>
-              <p className="text-gray-400">Cra 17M #69A-54 Sur</p>
-              <p className="text-gray-400">Lucero Medio, Bogotá</p>
+              <p className="text-gray-400 text-sm">Cra 17M #69A-54 Sur</p>
+              <p className="text-gray-400 text-sm">Lucero Medio, Bogotá</p>
             </div>
             <div className="text-center md:text-right">
-              <h4 className="font-bold mb-2 flex items-center justify-center md:justify-end gap-2">
-                <Phone className="w-5 h-5" />
+              <h4 className="font-bold mb-1 flex items-center justify-center md:justify-end gap-2 text-sm">
+                <Phone className="w-4 h-4" />
                 Contacto
               </h4>
-              <p className="text-gray-400">320 404 6369</p>
-              <p className="text-gray-400">Servicio disponible 24/7</p>
+              <p className="text-gray-400 text-sm">320 404 6369</p>
+              <p className="text-gray-400 text-sm">Servicio disponible 24/7</p>
             </div>
           </div>
-          <div className="border-t border-gray-700 pt-4 text-center text-gray-400 text-sm">
+          <div className="border-t border-gray-700 pt-3 text-center text-gray-400 text-xs">
             <p>© 2024 LavaFácil - Todos los derechos reservados</p>
           </div>
         </div>
