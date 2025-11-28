@@ -1,283 +1,744 @@
-import React, { useState } from 'react';
-import { Clock, Phone, Wrench, CheckCircle, Sun, Moon, MapPin, Truck, MessageCircle } from 'lucide-react';
-
-export default function LavaFacilWeb() {
-  const [horario, setHorario] = useState('diurno');
-
-  const serviciosDiurnos = [
-    {
-      tipo: "Doble Tina",
-      precio: "12.000",
-      duracion: "4 horas",
-      icono: "🔄",
-      caracteristicas: ["Ideal para cargas medianas", "Ahorro de energía", "Fácil de usar"]
-    },
-    {
-      tipo: "Digital Pequeña",
-      precio: "14.000",
-      duracion: "4 horas",
-      icono: "📱",
-      caracteristicas: ["Tecnología digital", "Programas automáticos", "Perfecta para apartamentos"]
-    },
-    {
-      tipo: "Digital Mediana",
-      precio: "16.000",
-      duracion: "4 horas",
-      icono: "⚙️",
-      caracteristicas: ["Mayor capacidad", "Múltiples programas", "Eficiencia energética"]
-    },
-    {
-      tipo: "Digital Grande",
-      precio: "18.000",
-      duracion: "4 horas",
-      icono: "🏆",
-      caracteristicas: ["Máxima capacidad", "Tecnología avanzada", "Ideal para familias"]
-    }
-  ];
-
-  const serviciosNocturnos = [
-    {
-      tipo: "Doble Tina",
-      precio: "16.500",
-      duracion: "Toda la noche",
-      icono: "🔄",
-      caracteristicas: ["Entrega: 5-6 PM", "Recogida: 7-8 AM", "Ideal para cargas medianas"]
-    },
-    {
-      tipo: "Digital Pequeña",
-      precio: "20.000",
-      duracion: "Toda la noche",
-      icono: "📱",
-      caracteristicas: ["Entrega: 5-6 PM", "Recogida: 7-8 AM", "Perfecta para apartamentos"]
-    },
-    {
-      tipo: "Digital Mediana",
-      precio: "22.000",
-      duracion: "Toda la noche",
-      icono: "⚙️",
-      caracteristicas: ["Entrega: 5-6 PM", "Recogida: 7-8 AM", "Mayor capacidad"]
-    },
-    {
-      tipo: "Digital Grande",
-      precio: "24.000",
-      duracion: "Toda la noche",
-      icono: "🏆",
-      caracteristicas: ["Entrega: 5-6 PM", "Recogida: 7-8 AM", "Máxima capacidad"]
-    }
-  ];
-
-  const servicios = horario === 'diurno' ? serviciosDiurnos : serviciosNocturnos;
-
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-blue-100">
-      <a
-        href="https://wa.me/573204046369?text=Hola%2C%20me%20interesa%20el%20servicio%20de%20alquiler%20de%20lavadoras"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-2xl hover:bg-green-600 transition-all duration-300 z-50 hover:scale-110 flex items-center gap-2 group"
-      >
-        <MessageCircle className="w-8 h-8" />
-        <span className="hidden group-hover:inline-block font-bold pr-2">WhatsApp</span>
-      </a>
-
-      <header className="bg-gradient-to-r from-gray-900 via-black to-blue-900 text-white py-12 px-4">
-        <div className="max-w-6xl mx-auto text-center">
-          <div className="mb-4">
-            <div className="w-24 h-24 mx-auto bg-white bg-opacity-10 rounded-full flex items-center justify-center mb-3 backdrop-blur-sm">
-              <div className="text-5xl">🧺</div>
-            </div>
-          </div>
-          <h1 className="text-4xl md:text-5xl font-bold mb-3">LavaFácil</h1>
-          <p className="text-xl md:text-2xl mb-4">Alquiler de Lavadoras con Servicio Técnico</p>
-          <div className="flex flex-wrap justify-center gap-2 mb-4 text-sm md:text-base">
-            <div className="flex items-center gap-2 bg-white bg-opacity-20 px-3 py-2 rounded-full backdrop-blur-sm">
-              <MapPin className="w-4 h-4" />
-              <span>Cra 17M #69A-54 Sur, Lucero Medio</span>
-            </div>
-            <div className="flex items-center gap-2 bg-white bg-opacity-20 px-3 py-2 rounded-full backdrop-blur-sm">
-              <Phone className="w-4 h-4" />
-              <span>320 404 6369</span>
-            </div>
-          </div>
-          <div className="flex flex-wrap justify-center gap-3 text-base">
-            <div className="flex items-center gap-2 bg-white bg-opacity-20 px-4 py-2 rounded-full">
-              <Sun className="w-5 h-5" />
-              <span>Servicio Diurno</span>
-            </div>
-            <div className="flex items-center gap-2 bg-white bg-opacity-20 px-4 py-2 rounded-full">
-              <Moon className="w-5 h-5" />
-              <span>Servicio Nocturno</span>
-            </div>
-            <div className="flex items-center gap-2 bg-white bg-opacity-20 px-4 py-2 rounded-full">
-              <Truck className="w-5 h-5" />
-              <span>Entrega e Instalación</span>
-            </div>
-          </div>
-        </div>
-      </header>
-
-      <section className="max-w-6xl mx-auto py-12 px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-6 text-gray-800">
-          Nuestros Servicios
-        </h2>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LavaFácil - Alquiler de Lavadoras</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #EFF6FF 0%, #FFFFFF 50%, #DBEAFE 100%);
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
         
-        <div className="flex flex-col sm:flex-row justify-center gap-3 mb-8">
-          <button
-            onClick={() => setHorario('diurno')}
-            className={`flex items-center justify-center gap-2 px-6 py-3 rounded-full font-bold text-base transition-all duration-300 ${
-              horario === 'diurno'
-                ? 'bg-gradient-to-r from-blue-600 to-blue-800 text-white shadow-lg scale-105'
-                : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
-            }`}
-          >
-            <Sun className="w-5 h-5" />
-            Servicio Diurno
-          </button>
-          <button
-            onClick={() => setHorario('nocturno')}
-            className={`flex items-center justify-center gap-2 px-6 py-3 rounded-full font-bold text-base transition-all duration-300 ${
-              horario === 'nocturno'
-                ? 'bg-gradient-to-r from-gray-900 to-black text-white shadow-lg scale-105'
-                : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
-            }`}
-          >
-            <Moon className="w-5 h-5" />
-            Servicio Nocturno
-          </button>
-        </div>
+        /* Botón flotante WhatsApp */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            background: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            z-index: 1000;
+            text-decoration: none;
+            transition: all 0.3s;
+            animation: pulse 2s infinite;
+        }
+        .whatsapp-float:hover {
+            background: #128C7E;
+            transform: scale(1.1);
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          {servicios.map((servicio, index) => (
-            <div
-              key={index}
-              className={`bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border-2 ${
-                horario === 'nocturno' ? 'border-gray-800 hover:border-black' : 'border-blue-100 hover:border-blue-400'
-              } cursor-pointer transform hover:-translate-y-2`}
-            >
-              <div className={`${
-                horario === 'nocturno' 
-                  ? 'bg-gradient-to-r from-gray-900 to-black' 
-                  : 'bg-gradient-to-r from-blue-500 to-blue-600'
-              } p-5 text-white text-center`}>
-                <div className="text-4xl mb-2">{servicio.icono}</div>
-                <h3 className="text-xl font-bold mb-1">{servicio.tipo}</h3>
-                <div className="text-3xl font-bold">${servicio.precio}</div>
-                <p className={`${horario === 'nocturno' ? 'text-gray-300' : 'text-blue-100'} mt-1 text-sm`}>
-                  {servicio.duracion}
-                </p>
-              </div>
-              
-              <div className="p-4">
-                <ul className="space-y-2">
-                  {servicio.caracteristicas.map((car, i) => (
-                    <li key={i} className="flex items-start gap-2 text-sm">
-                      <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
-                      <span className="text-gray-700">{car}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #1F2937 0%, #000000 50%, #1E40AF 100%);
+            color: white;
+            padding: 3rem 1rem;
+            text-align: center;
+        }
+        .logo-circle {
+            width: 100px;
+            height: 100px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 3rem;
+        }
+        h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        .subtitle {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            opacity: 0.9;
+        }
+        .info-badges {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        .badge {
+            background: rgba(255,255,255,0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            backdrop-filter: blur(10px);
+        }
+        .service-badges {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.75rem;
+        }
+        .service-badge {
+            background: rgba(255,255,255,0.2);
+            padding: 0.5rem 1.25rem;
+            border-radius: 9999px;
+        }
+        
+        /* Servicios */
+        .services-section {
+            padding: 3rem 1rem;
+        }
+        .section-title {
+            font-size: 2rem;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #1F2937;
+        }
+        .horario-selector {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+        @media (min-width: 640px) {
+            .horario-selector {
+                flex-direction: row;
+            }
+        }
+        .btn-horario {
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            font-size: 1rem;
+        }
+        .btn-horario.active-diurno {
+            background: linear-gradient(135deg, #2563EB, #1E40AF);
+            color: white;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
+        }
+        .btn-horario.active-nocturno {
+            background: linear-gradient(135deg, #1F2937, #000000);
+            color: white;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+        }
+        .btn-horario.inactive {
+            background: #E5E7EB;
+            color: #4B5563;
+        }
+        .btn-horario:hover {
+            transform: translateY(-2px);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.25rem;
+        }
+        @media (min-width: 640px) {
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (min-width: 1024px) {
+            .services-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+        .service-card {
+            background: white;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+        }
+        .service-card.diurno {
+            border-color: #DBEAFE;
+        }
+        .service-card.diurno:hover {
+            border-color: #3B82F6;
+        }
+        .service-card.nocturno {
+            border-color: #374151;
+        }
+        .service-card.nocturno:hover {
+            border-color: #000000;
+        }
+        .card-header {
+            padding: 1.5rem;
+            text-align: center;
+            color: white;
+        }
+        .card-header.diurno {
+            background: linear-gradient(135deg, #3B82F6, #2563EB);
+        }
+        .card-header.nocturno {
+            background: linear-gradient(135deg, #1F2937, #000000);
+        }
+        .card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: bold;
+            margin-bottom: 0.25rem;
+        }
+        .card-price {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        .card-duration {
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+            opacity: 0.9;
+        }
+        .card-body {
+            padding: 1rem;
+        }
+        .features-list {
+            list-style: none;
+        }
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.875rem;
+            color: #4B5563;
+        }
+        .check-icon {
+            color: #10B981;
+            font-weight: bold;
+        }
+        .hidden {
+            display: none;
+        }
+        
+        /* Ventajas */
+        .advantages-section {
+            background: linear-gradient(135deg, #1F2937, #000000, #1F2937);
+            color: white;
+            padding: 3rem 1rem;
+        }
+        .advantages-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            margin-top: 2.5rem;
+        }
+        @media (min-width: 768px) {
+            .advantages-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        .advantage-item {
+            text-align: center;
+        }
+        .advantage-icon {
+            width: 64px;
+            height: 64px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 2rem;
+        }
+        .advantage-title {
+            font-size: 1.25rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        .advantage-text {
+            font-size: 0.875rem;
+            color: #D1D5DB;
+        }
+        
+        /* CTA */
+        .cta-section {
+            padding: 3rem 1rem;
+            text-align: center;
+        }
+        .cta-title {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: #1F2937;
+        }
+        .cta-subtitle {
+            font-size: 1.125rem;
+            color: #6B7280;
+            margin-bottom: 1.5rem;
+        }
+        .cta-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            justify-content: center;
+            align-items: center;
+        }
+        @media (min-width: 640px) {
+            .cta-buttons {
+                flex-direction: row;
+            }
+        }
+        .btn-cta {
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            font-weight: bold;
+            font-size: 1.125rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        .btn-whatsapp {
+            background: #25D366;
+            color: white;
+        }
+        .btn-whatsapp:hover {
+            background: #128C7E;
+            transform: scale(1.05);
+        }
+        .btn-call {
+            background: linear-gradient(135deg, #1F2937, #000000);
+            color: white;
+        }
+        .btn-call:hover {
+            background: linear-gradient(135deg, #000000, #1F2937);
+            transform: scale(1.05);
+        }
+        
+        /* Footer */
+        footer {
+            background: #1F2937;
+            color: white;
+            padding: 2rem 1rem;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        @media (min-width: 768px) {
+            .footer-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        .footer-column {
+            text-align: center;
+        }
+        @media (min-width: 768px) {
+            .footer-column:first-child {
+                text-align: left;
+            }
+            .footer-column:last-child {
+                text-align: right;
+            }
+        }
+        .footer-title {
+            font-size: 1.25rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        .footer-subtitle {
+            font-weight: bold;
+            margin-bottom: 0.25rem;
+            font-size: 0.875rem;
+        }
+        .footer-text {
+            color: #9CA3AF;
+            font-size: 0.875rem;
+        }
+        .footer-bottom {
+            border-top: 1px solid #374151;
+            padding-top: 1rem;
+            text-align: center;
+            font-size: 0.75rem;
+            color: #9CA3AF;
+        }
+        
+        @media (max-width: 640px) {
+            h1 { font-size: 2rem; }
+            .section-title { font-size: 1.5rem; }
+            .cta-title { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- Botón flotante WhatsApp -->
+    <a href="https://wa.me/573204046369?text=Hola%2C%20me%20interesa%20el%20servicio%20de%20alquiler%20de%20lavadoras" 
+       target="_blank" 
+       class="whatsapp-float">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+        </svg>
+    </a>
 
-      <section className="bg-gradient-to-r from-gray-900 via-black to-gray-900 text-white py-12 px-4">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-10">
-            ¿Por Qué Elegir LavaFácil?
-          </h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="text-center">
-              <div className="bg-white bg-opacity-20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-3">
-                <Clock className="w-8 h-8" />
-              </div>
-              <h3 className="text-xl font-bold mb-2">Horario Flexible</h3>
-              <p className="text-gray-300 text-sm">
-                Servicio diurno y nocturno disponible. Alquila por las horas que necesites.
-              </p>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo-circle">🧺</div>
+            <h1>LavaFácil</h1>
+            <p class="subtitle">Alquiler de Lavadoras con Servicio Técnico</p>
+            <div class="info-badges">
+                <div class="badge">📍 Cra 17M #69A-54 Sur, Lucero Medio</div>
+                <div class="badge">📞 320 404 6369</div>
             </div>
+            <div class="service-badges">
+                <div class="service-badge">☀️ Servicio Diurno</div>
+                <div class="service-badge">🌙 Servicio Nocturno</div>
+                <div class="service-badge">🚚 Entrega e Instalación</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Servicios -->
+    <section class="services-section">
+        <div class="container">
+            <h2 class="section-title">Nuestros Servicios</h2>
             
-            <div className="text-center">
-              <div className="bg-white bg-opacity-20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-3">
-                <Truck className="w-8 h-8" />
-              </div>
-              <h3 className="text-xl font-bold mb-2">Entrega a Domicilio</h3>
-              <p className="text-gray-300 text-sm">
-                Llevamos e instalamos la lavadora en tu casa. Servicio completo sin complicaciones.
-              </p>
+            <!-- Selector de Horario -->
+            <div class="horario-selector">
+                <button onclick="mostrarDiurno()" id="btnDiurno" class="btn-horario active-diurno">
+                    ☀️ Servicio Diurno
+                </button>
+                <button onclick="mostrarNocturno()" id="btnNocturno" class="btn-horario inactive">
+                    🌙 Servicio Nocturno
+                </button>
             </div>
+
+            <!-- Servicios Diurnos -->
+            <div id="serviciosDiurnos" class="services-grid">
+                <div class="service-card diurno">
+                    <div class="card-header diurno">
+                        <div class="card-icon">🔄</div>
+                        <h3 class="card-title">Doble Tina</h3>
+                        <div class="card-price">$12.000</div>
+                        <p class="card-duration">4 horas</p>
+                    </div>
+                    <div class="card-body">
+                        <ul class="features-list">
+                            <li class="feature-item">
+                                <span class="check-icon">✓</span>
+                                <span>Ideal para cargas medianas</span>
+                            </li>
+                            <li class="feature-item">
+                                <span class="check-icon">✓</span>
+                                <span>Ahorro de energía</span>
+                            </li>
+                            <li class="feature-item">
+                                <span class="check-icon">✓</span>
+                                <span>Fácil de usar</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="service-card diurno">
+                    <div class="card-header diurno">
+                        <div class="card-icon">📱</div>
+                        <h3 class="card-title">Digital Pequeña</h3>
+                        <div class="card-price">$14.000</div>
+                        <p class="card-duration">4 horas</p>
+                    </div>
+                    <div class="card-body">
+                        <ul class="features-list">
+                            <li class="feature-item">
+                                <span class="check-icon">✓</span>
+                                <span>Tecnología digital</span>
+                            </li>
+                            <li class="feature-item">
+                                <span class="check-icon">✓</span>
+                                <span>Programas automáticos</span>
+                            </li>
+                            <li class="feature-item">
+                                <span class="check-icon">✓</span>
+                                <span>Perfecta para apartamentos</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="service-card diurno">
+                    <div class="card-header diurno">
+                        <div class="card-icon">⚙️</div>
+                        <h3 class="card-title">Digital Mediana</h3>
+                        <div class="card-price">$16.000</div>
+                        <p class="card-duration">4 horas</p>
+                    </div>
+                    <div class="card-body">
+                        <ul class="features-list">
+                            <li class="feature-item">
+                                <span class="check-icon">✓</span>
+                                <span>Mayor capacidad</span>
+                            </li>
+                            <li class="feature-item">
+                                <span class="check-icon">✓</span>
+                                <span>Múltiples programas</span>
+                            </li>
+                            <li class="feature-item">
+                                <span class="check-icon">✓</span>
+                                <span>Eficiencia energética</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="service-card diurno">
+                    <div class="card-header diurno">
+                        <div class="card-icon">🏆</div>
+                        <h3 class="card-title">Digital Grande</h3>
+                        <div class="card-price">$18.000</div>
+                        <p class="card-duration">4 horas</p>
+                    </div>
+                    <div class="card-body">
+                        <ul class="features-list">
+                            <li class="feature-item">
+                                <span class="check-icon">✓</span>
+                                <span>Máxima capacidad</span>
+                            </li>
+                            <li class="feature-item">
+                                <span class="check-icon">✓</span>
+                                <span>Tecnología avanzada</span>
+                            </li>
+                            <li class="feature-item">
+                                <span class="check-icon">✓</span>
+                                <span>Ideal para familias</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Servicios Nocturnos -->
+            <div id="serviciosNocturnos" class="services-grid hidden">
+                <div class="service-card nocturno">
+                    <div class="card-header nocturno">
+                        <div class="card-icon">🔄</div>
+                        <h3 class="card-title">Doble Tina</h3>
+                        <div class="card-price">$16.500</div>
+                        <p class="card-duration">Toda la noche</p>
+                    </div>
+                    <div class="card-body">
+                        <ul class="features-list">
+                            <li class="feature-item">
+                                <span class="check-icon">✓</span>
+                                <span>Entrega: 5-6 PM</span>
+                            </li>
+                            <li class="feature-item">
+                                <span class="check-icon">✓</span>
+                                <span>Recogida: 7-8 AM</span>
+                            </li>
+                            <li class="feature-item">
+                                <span class="check-icon">✓</span>
+                                <span>Ideal para cargas medianas</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="service-card nocturno">
+                    <div class="card-header nocturno">
+                        <div class="card-icon">📱</div>
+                        <h3 class="card-title">Digital Pequeña</h3>
+                        <div class="card-price">$20.000</div>
+                        <p class="card-duration">Toda la noche</p>
+                    </div>
+                    <div class="card-body">
+                        <ul class="features-list">
+                            <li class="feature-item">
+                                <span class="check-icon">✓</span>
+                                <span>Entrega: 5-6 PM</span>
+                            </li>
+                            <li class="feature-item">
+                                <span class="check-icon">✓</span>
+                                <span>Recogida: 7-8 AM</span>
+                            </li>
+                            <li class="feature-item">
+                                <span class="check-icon">✓</span>
+                                <span>Perfecta para apartamentos</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="service-card nocturno">
+                    <div class="card-header nocturno">
+                        <div class="card-icon">⚙️</div>
+                        <h3 class="card-title">Digital Mediana</h3>
+                        <div class="card-price">$22.000</div>
+                        <p class="card-duration">Toda la noche</p>
+                    </div>
+                    <div class="card-body">
+                        <ul class="features-list">
+                            <li class="feature-item">
+                                <span class="check-icon">✓</span>
+                                <span>Entrega: 5-6 PM</span>
+                            </li>
+                            <li class="feature-item">
+                                <span class="check-icon">✓</span>
+                                <span>Recogida: 7-8 AM</span>
+                            </li>
+                            <li class="feature-item">
+                                <span class="check-icon">✓</span>
+                                <span>Mayor capacidad</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="service-card nocturno">
+                    <div class="card-header nocturno">
+                        <div class="card-icon">🏆</div>
+                        <h3 class="card-title">Digital Grande</h3>
+                        <div class="card-price">$24.000</div>
+                        <p class="card-duration">Toda la noche</p>
+                    </div>
+                    <div class="card-body">
+                        <ul class="features-list">
+                            <li class="feature-item">
+                                <span class="check-icon">✓</span>
+                                <span>Entrega: 5-6 PM</span>
+                            </li>
+                            <li class="feature-item">
+                                <span class="check-icon">✓</span>
+                                <span>Recogida: 7-8 AM</span>
+                            </li>
+                            <li class="feature-item">
+                                <span class="check-icon">✓</span>
+                                <span>Máxima capacidad</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ventajas -->
+    <section class="advantages-section">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">¿Por Qué Elegir LavaFácil?</h2>
             
-            <div className="text-center">
-              <div className="bg-white bg-opacity-20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-3">
-                <Wrench className="w-8 h-8" />
-              </div>
-              <h3 className="text-xl font-bold mb-2">Servicio Técnico</h3>
-              <p className="text-gray-300 text-sm">
-                Reparación y mantenimiento profesional de lavadoras. Técnicos especializados.
-              </p>
+            <div class="advantages-grid">
+                <div class="advantage-item">
+                    <div class="advantage-icon">⏰</div>
+                    <h3 class="advantage-title">Horario Flexible</h3>
+                    <p class="advantage-text">Servicio diurno y nocturno disponible. Alquila por las horas que necesites.</p>
+                </div>
+                
+                <div class="advantage-item">
+                    <div class="advantage-icon">🚚</div>
+                    <h3 class="advantage-title">Entrega a Domicilio</h3>
+                    <p class="advantage-text">Llevamos e instalamos la lavadora en tu casa. Servicio completo sin complicaciones.</p>
+                </div>
+                
+                <div class="advantage-item">
+                    <div class="advantage-icon">🔧</div>
+                    <h3 class="advantage-title">Servicio Técnico</h3>
+                    <p class="advantage-text">Reparación y mantenimiento profesional de lavadoras. Técnicos especializados.</p>
+                </div>
             </div>
-          </div>
         </div>
-      </section>
+    </section>
 
-      <section className="max-w-4xl mx-auto py-12 px-4 text-center">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-800">
-          ¿Listo para Alquilar tu Lavadora?
-        </h2>
-        <p className="text-lg md:text-xl text-gray-600 mb-6">
-          Contáctanos ahora y disfruta de nuestro servicio profesional
-        </p>
-        <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-3">
-          <a
-            href="https://wa.me/573204046369?text=Hola%2C%20me%20interesa%20el%20servicio%20de%20alquiler%20de%20lavadoras"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-green-500 text-white px-6 py-3 rounded-full text-lg font-bold hover:bg-green-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 flex items-center justify-center gap-2"
-          >
-            <MessageCircle className="w-5 h-5" />
-            WhatsApp
-          </a>
-          <a
-            href="tel:+573204046369"
-            className="bg-gradient-to-r from-gray-900 to-black text-white px-6 py-3 rounded-full text-lg font-bold hover:from-black hover:to-gray-800 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 flex items-center justify-center gap-2"
-          >
-            <Phone className="w-5 h-5" />
-            Llamar Ahora
-          </a>
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="cta-title">¿Listo para Alquilar tu Lavadora?</h2>
+            <p class="cta-subtitle">Contáctanos ahora y disfruta de nuestro servicio profesional</p>
+            <div class="cta-buttons">
+                <a href="https://wa.me/573204046369?text=Hola%2C%20me%20interesa%20el%20servicio%20de%20alquiler%20de%20lavadoras" 
+                   target="_blank" 
+                   class="btn-cta btn-whatsapp">
+                    💬 WhatsApp
+                </a>
+                <a href="tel:+573204046369" class="btn-cta btn-call">
+                    📞 Llamar Ahora
+                </a>
+            </div>
         </div>
-      </section>
+    </section>
 
-      <footer className="bg-gray-800 text-white py-6 px-4">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-4">
-            <div className="text-center md:text-left">
-              <h3 className="text-xl font-bold mb-1">LavaFácil</h3>
-              <p className="text-gray-400 text-sm">Alquiler de Lavadoras con Servicio Técnico Profesional</p>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3 class="footer-title">LavaFácil</h3>
+                    <p class="footer-text">Alquiler de Lavadoras con Servicio Técnico Profesional</p>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-subtitle">📍 Ubicación</h4>
+                    <p class="footer-text">Cra 17M #69A-54 Sur</p>
+                    <p class="footer-text">Lucero Medio, Bogotá</p>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-subtitle">📞 Contacto</h4>
+                    <p class="footer-text">320 404 6369</p>
+                    <p class="footer-text">Servicio disponible 7 AM - 6 PM</p>
+                </div>
             </div>
-            <div className="text-center">
-              <h4 className="font-bold mb-1 flex items-center justify-center gap-2 text-sm">
-                <MapPin className="w-4 h-4" />
-                Ubicación
-              </h4>
-              <p className="text-gray-400 text-sm">Cra 17M #69A-54 Sur</p>
-              <p className="text-gray-400 text-sm">Lucero Medio, Bogotá</p>
+            <div class="footer-bottom">
+                <p>© 2024 LavaFácil - Todos los derechos reservados</p>
             </div>
-            <div className="text-center md:text-right">
-              <h4 className="font-bold mb-1 flex items-center justify-center md:justify-end gap-2 text-sm">
-                <Phone className="w-4 h-4" />
-                Contacto
-              </h4>
-              <p className="text-gray-400 text-sm">320 404 6369</p>
-              <p className="text-gray-400 text-sm">Servicio disponible 7 AM - 6 PM</p>
-            </div>
-          </div>
-          <div className="border-t border-gray-700 pt-3 text-center text-gray-400 text-xs">
-            <p>© 2024 LavaFácil - Todos los derechos reservados</p>
-          </div>
         </div>
-      </footer>
-    </div>
-  );
-}
+    </footer>
+
+    <script>
+        function mostrarDiurno() {
+            document.getElementById('serviciosDiurnos').classList.remove('hidden');
+            document.getElementById('serviciosNocturnos').classList.add('hidden');
+            document.getElementById('btnDiurno').className = 'btn-horario active-diurno';
+            document.getElementById('btnNocturno').className = 'btn-horario inactive';
+        }
+
+        function mostrarNocturno() {
+            document.getElementById('serviciosDiurnos').classList.add('hidden');
+            document.getElementById('serviciosNocturnos').classList.remove('hidden');
+            document.getElementById('btnDiurno').className = 'btn-horario inactive';
+            document.getElementById('btnNocturno').className = 'btn-horario active-nocturno';
+        }
+    </script>
+
+</body>
+</html>
